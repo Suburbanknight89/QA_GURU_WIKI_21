@@ -9,6 +9,9 @@ import org.aeonbits.owner.Config;
         "classpath:config/${deviceHost}.properties"
 })
 public interface BrowserStackConfig extends Config {
+    @Key("browserStackURL")
+    String browserStackURL();
+
     @Key("browserStackUsername")
     String browserStackUsername();
 
@@ -18,13 +21,14 @@ public interface BrowserStackConfig extends Config {
     @Key("app")
     String app();
 
-    @Key("browserStackURL")
-    String browserStackURL();
-
     @Key("device")
     String device();
 
     @Key("os_version")
     String os_version();
-
 }
+
+
+
+
+
