@@ -5,8 +5,7 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:config/browser_stack.properties",
-        "classpath:config/${deviceHost}.properties"
+        "classpath:config/browser_stack.properties"
 })
 public interface BrowserStackConfig extends Config {
     @Key("browserStackURL")

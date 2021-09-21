@@ -31,7 +31,7 @@ public class AllureAttachments {
         if (deviceHost().equals(DeviceHost.BROWSER_STACK)) {
             return BrowserStackHelper.getBrowserstackVideoUrl(sessionId);
         } else if (deviceHost().equals(DeviceHost.SELENOID)) {
-            return AppiumHelper.getSelenoidVideoUrl(sessionId);
+            return SelenoidHelper.getSelenoidVideoUrl(sessionId);
         }
         return null;
     }

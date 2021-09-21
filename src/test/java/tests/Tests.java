@@ -28,18 +28,16 @@ public class Tests extends TestBase {
                 $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click());
 
         step("Reading lists with sync", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/secondaryTextView"))
-                    .shouldHave(text("Join Wikipedia"));
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("Reading lists with sync"));
         });
 
         step("Click continue", () ->
                 $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click());
 
-        step("Send anonymous data. Checkbox check", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/switchView"))
-                    .shouldHave(text("ON")).click();
-            $(MobileBy.id("org.wikipedia.alpha:id/switchView"))
-                    .shouldHave(text("OFF"));
+        step("Send anonymous data", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("Send anonymous data"));
         });
     }
 

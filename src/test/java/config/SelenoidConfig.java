@@ -5,11 +5,11 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:config/appium.properties"
+        "classpath:config/selenoid.properties"
 })
-public interface AppiumConfig extends Config {
-    @Key("appium.server.url")
-    String appiumServerUrl();
+public interface SelenoidConfig extends Config {
+    @Key("selenoid.server.url")
+    String selenoidServerUrl();
 
     @Key("platform.name")
     String platformName();
@@ -22,6 +22,15 @@ public interface AppiumConfig extends Config {
 
     @Key("app.url")
     String appURL();
+
+    @Key("video.storage")
+    String videoStorage();
+
+    @Key("username")
+    String appiumServerUser();
+
+    @Key("password")
+    String appiumServerPassword();
 }
 
 
