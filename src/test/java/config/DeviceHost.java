@@ -3,5 +3,6 @@ package config;
 public enum DeviceHost {
     BROWSER_STACK,
     APPIUM,
-    SELENOID
+    SELENOID,
+    REAL_DEVICE
 }

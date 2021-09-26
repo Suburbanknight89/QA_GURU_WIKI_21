@@ -1,15 +1,15 @@
 package config;
 
-import org.aeonbits.owner.Config;
+        import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:config/appium.properties"
+        "classpath:config/real_device.properties"
 })
-public interface AppiumConfig extends Config {
-    @Key("appium.server.url")
-    String appiumServerUrl();
+public interface RealDeviceConfig extends Config {
+    @Key("real_device.server.url")
+    String getReal_DeviceServerUrl();
 
     @Key("platform.name")
     String platformName();

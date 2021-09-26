@@ -4,6 +4,7 @@ import com.codeborne.selenide.WebDriverProvider;
 import config.DeviceHost;
 import helpers.AppiumHelper;
 import helpers.BrowserStackHelper;
+import helpers.Real_DeviceHelper;
 import helpers.SelenoidHelper;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +27,11 @@ public class AndroidMobileDriver implements WebDriverProvider {
             return getAppiumMobileDriver(desiredCapabilities);
         }
 
+        if (deviceHost().equals(DeviceHost.REAL_DEVICE)) {
+            return getReal_DeviceDriver(desiredCapabilities);
+        }
+
+
         return getSelenoidMobileDriver(desiredCapabilities);
     }
 
@@ -40,6 +46,19 @@ public class AndroidMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("app", appiumConfig.appURL());
 
         return new AndroidDriver<>(AppiumHelper.getAppiumServerUrl(), desiredCapabilities);
+    }
+
+    public AndroidDriver<WebElement> getReal_DeviceDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
+        desiredCapabilities.setCapability("platformName", realDeviceConfig.platformName());
+        desiredCapabilities.setCapability("deviceName", realDeviceConfig.deviceName());
+        desiredCapabilities.setCapability("version", realDeviceConfig.version());
+        desiredCapabilities.setCapability("locale", "en");
+        desiredCapabilities.setCapability("language", "en");
+        desiredCapabilities.setCapability("appPackage", "org.wikipedia.alpha");
+        desiredCapabilities.setCapability("appActivity", "org.wikipedia.main.MainActivity");
+        desiredCapabilities.setCapability("app", realDeviceConfig.appURL());
+
+        return new AndroidDriver<>(Real_DeviceHelper.getReal_DeviceServerUrl(), desiredCapabilities);
     }
 
     public AndroidDriver<WebElement> getSelenoidMobileDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
@@ -73,4 +92,6 @@ public class AndroidMobileDriver implements WebDriverProvider {
 
         return new AndroidDriver<>(BrowserStackHelper.getBrowserstackUrl(), desiredCapabilities);
     }
+
+
 }

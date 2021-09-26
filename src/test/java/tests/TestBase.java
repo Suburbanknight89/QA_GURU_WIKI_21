@@ -40,6 +40,7 @@ public class TestBase {
             String sessionId = getSessionId();
             AllureAttachments.attachVideo(sessionId);
 
+
             if (ProjectData.deviceHost().equals(DeviceHost.BROWSER_STACK)) {
                 AllureAttachments.attachAsText(
                         "Browserstack build link",
