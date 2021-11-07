@@ -38,6 +38,4 @@ target/
 /gradlew
 /gradlew.bat
 .todo
-!*.properties.example
-*.properties
 settings.gradle

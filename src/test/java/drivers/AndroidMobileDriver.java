@@ -87,7 +87,7 @@ public class AndroidMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("autoGrantPermissions", "true");
 
         desiredCapabilities.setCapability("device", browserStackConfig.device());
-        desiredCapabilities.setCapability("os_version", browserStackConfig.os_version());
+        desiredCapabilities.setCapability("osVersion", browserStackConfig.osVersion());
         desiredCapabilities.setCapability("app", browserStackConfig.app());
 
         return new AndroidDriver<>(BrowserStackHelper.getBrowserstackUrl(), desiredCapabilities);
