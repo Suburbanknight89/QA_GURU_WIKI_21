@@ -23,8 +23,8 @@ public interface BrowserStackConfig extends Config {
     @Key("device")
     String device();
 
-    @Key("os_version")
-    String os_version();
+    @Key("osVersion")
+    String osVersion();
 }
 
 
